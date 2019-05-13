@@ -4,7 +4,7 @@ const initialState = {
     winner: '',
     active_game: false,
     gameBoard: [
-        [], // these are the column the token fills in lowest disc
+        [], // these are the column the token fills in lowest disc. inside each columns theres an item for the row
         [],
         [], //  [red [ yell  [yell
         [], //   yell  red    yell
@@ -15,11 +15,14 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    console.log('inside reducer')
+    console.log('inside reducer', initialState.gameBoard, initialState.active_game)
     switch(action.type) {
         case DROP_TOKEN:
+        console.log('inside switch', initialState.gameBoard, initialState.active_game)
+
             return {
-                active_game: action.payload.active
+                active_game: action.payload.active,
+                
             };
         default: 
             return state

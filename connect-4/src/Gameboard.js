@@ -9,7 +9,7 @@ class Gameboard extends Component  {
     render () {
         return (
             <div className='board' onClick={this.handleClick}>
-                <p>{this.props.columns}, {this.props.rows}</p>      
+                <p>column: {this.props.columns}, <br/> row: {this.props.rows}</p>      
             </div>
         )
     }

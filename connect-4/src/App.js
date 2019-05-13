@@ -23,7 +23,10 @@ function App() {
       <header className="App-header">
        home
       </header>
+      <div className='rows'>
       {row}
+      </div>
+     
     </div>
   );
 }
