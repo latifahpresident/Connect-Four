@@ -26,13 +26,9 @@
 
 .board {
   border: 1px solid royalblue;
-  /* border-radius: 50%; */
+  border-radius: 50%;
   display: inline-block;
   margin: 1rem;
-  /* width: 5%; */
   cursor: pointer;
 }
 
-.rows {
-  border: 1px solid red;
-}

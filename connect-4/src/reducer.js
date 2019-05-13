@@ -15,18 +15,20 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    console.log('inside reducer', initialState.gameBoard, initialState.active_game)
+    console.log('inside reducer', )
+
     switch(action.type) {
         case DROP_TOKEN:
-        console.log('inside switch', initialState.gameBoard, initialState.active_game)
 
             return {
-                active_game: action.payload.active,
-                
+                active_game: action.payload.game,
             };
+
         default: 
             return state
+            
     }
+
 }
 
 // current player

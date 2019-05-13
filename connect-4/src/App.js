@@ -6,7 +6,7 @@ function App() {
   // 7 col 6 row
   const row = [] //6 rows
 
-  for (let y = 0; y < 6; y++) {
+  for (let y = 6; y >= 0; y--) {
     const col = [] // will make 6 rows
 
     for (let x = 0; x < 7; x++) { // will make 7 columns
