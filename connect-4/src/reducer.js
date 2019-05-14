@@ -1,6 +1,6 @@
-import { DROP_TOKEN } from './actions.js'
+import { DROP_TOKEN, GAME_START , CURRENT_PLAYER} from './actions.js'
 const initialState = {
-    current_player: 'player_1',
+    current_player: 1,
     winner: '',
     active_game: false,
     gameBoard: [
@@ -15,13 +15,21 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    console.log('inside reducer', )
+    console.log('starting player:', action.payload)
 
     switch(action.type) {
+        case GAME_START: 
+            return {
+                active_game: action.payload
+            }
+        case CURRENT_PLAYER:
+            return {
+                current_player: action.payload
+            }
         case DROP_TOKEN:
 
             return {
-                active_game: action.payload.game,
+                current_player: state.current_player === 1 ? 2 : 1
             };
 
         default: 
