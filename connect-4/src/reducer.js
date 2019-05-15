@@ -1,7 +1,7 @@
 import { DROP_TOKEN, GAME_START , CURRENT_PLAYER} from './actions.js'
 const initialState = {
     active_game: false,
-    current_player: 1,
+    current_player: null,
     winner: '',
     
     gameBoard: [
@@ -29,9 +29,13 @@ export default (state = initialState, action) => {
                 current_player: action.payload
             }
         case DROP_TOKEN:
-
+                const token = state.current_player
+                const column = state.gameBoard[action.payload].concat(token)
+                const gameBoard = state.gameBoard.slice()
+                gameBoard[action.payload] = column
             return {
-                current_player: state.current_player === 1 ? 2 : 1
+                current_player: state.current_player === 1 ? 2 : 1,
+                gameBoard: gameBoard
             };
 
         default: 
