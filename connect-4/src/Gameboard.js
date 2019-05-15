@@ -14,7 +14,7 @@ class Gameboard extends Component  {
     render () {
         return (
             <div className='board' onClick={this.handleClick}>
-                <p>column: {this.props.columns}, <br/> row: {this.props.rows}</p>      
+                <p>column: {this.props.columns}, <br/> row: {this.props.rows} </p>      
             </div>
         )
     }
@@ -22,7 +22,8 @@ class Gameboard extends Component  {
 const mapStateToProps = state => {
     return {
         current_ply: state.current_player,
-        winner: state.winner
+        winner: state.winner,
+        start_game: state.active_game
     }
 }
 

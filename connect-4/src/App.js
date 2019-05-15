@@ -22,17 +22,21 @@ import './App.css';
 
 
 class App extends Component  {
+  
   start = event => {
     console.log(`starting game`)
     event.preventDefault()
     this.props.begin()
 }
   render () {
+    console.log(`is game active`, this.props.start_game)
   return (
     <div className="App">
       <header className="App-header">
+      <button onClick={this.start}> Start Game </button>
+        <p>Game Active: {this.props.start_game }</p>
         <p> The Current Player is: Player {this.props.current_ply}</p>
-       <button onClick={this.start}> Start Game </button>
+       
       </header>
       <div className='rows'>
       {row}
@@ -45,7 +49,8 @@ class App extends Component  {
 const mapStateToProps = state => {
   return {
       current_ply: state.current_player,
-      winner: state.winner
+      winner: state.winner,
+      start_game: state.active_game
   }
 }
 

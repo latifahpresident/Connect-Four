@@ -5,7 +5,7 @@ export const CURRENT_PLAYER = 'CURRENT_PLAYER';
 export const startGame = () =>  dispatch => {
     dispatch( {
         type: 'GAME_START',
-        payload: true
+       
     })
     dispatch({
         type: 'CURRENT_PLAYER',
