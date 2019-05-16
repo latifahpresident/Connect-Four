@@ -7,10 +7,6 @@ export const startGame = () =>  dispatch => {
         type: 'GAME_START',
         payload: true
     })
-    dispatch({
-        type: 'CURRENT_PLAYER',
-        payload: 1
-    })
 }
 
 export const dropToken = col => {

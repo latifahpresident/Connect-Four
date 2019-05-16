@@ -7,7 +7,12 @@ class Gameboard extends Component  {
 
     handleClick = () => {
          //telling me which col was click
-      this.props.drop(this.props.columns)
+         if(this.props.start_game) {
+            this.props.drop(this.props.columns)
+         } else {
+             return
+         }
+      
     }
 
     
@@ -27,11 +32,7 @@ class Gameboard extends Component  {
         }
        
         return (
-            <div className={activeClass} onClick={this.handleClick}>
-            {/* <p>column: {this.props.columns}, <br/> row: {this.props.rows} </p>       */}
-
-    
-            </div>
+            <div className={activeClass} onClick={this.handleClick}></div>
         )
     }
 }

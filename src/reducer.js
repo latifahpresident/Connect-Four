@@ -1,9 +1,8 @@
-import { DROP_TOKEN, GAME_START , CURRENT_PLAYER} from './actions.js'
+import { DROP_TOKEN, GAME_START} from './actions.js'
 const initialState = {
     active_game: false,
     current_player: 1,
     winner: '',
-    
     gameBoard: [
         [], // these are the column the token fills in lowest disc. inside each columns theres an item for the row
         [],
@@ -16,8 +15,6 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    
-
     switch(action.type) {
         case GAME_START: 
         console.log(' game active:', action.payload)
@@ -25,10 +22,6 @@ export default (state = initialState, action) => {
                 ...state,
                 active_game: action.payload
             }
-        // case CURRENT_PLAYER:
-        //     return {
-        //         current_player: action.payload
-        //     }
         case DROP_TOKEN:
         console.log(' column:', action.payload)
                 const token = state.current_player

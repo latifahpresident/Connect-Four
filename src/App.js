@@ -33,14 +33,11 @@ class App extends Component  {
   return (
     <div className="App">
       <header className="App-header">
-      <button onClick={this.props.begin}> Start Game </button>
+        <button onClick={this.props.begin}> Start Game </button>
         <p>Game Active: {this.props.start_game ? 'True' : 'False'}</p>
         <p> The Current Player is: Player {this.props.current_ply}</p>
-       
       </header>
       {cells}
-      
-     
     </div>
   )}
 }
