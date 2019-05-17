@@ -10,7 +10,7 @@ class Gameboard extends Component  {
          if(this.props.start_game) {
             this.props.drop(this.props.columns)
          } else {
-             return
+             alert('Please Start Game')
          }
       
     }
