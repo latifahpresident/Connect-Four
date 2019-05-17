@@ -39,7 +39,7 @@ class App extends Component  {
         <button onClick={this.props.begin}> Start Game </button>
         <p>Game Active: {this.props.start_game ? 'True' : 'False'}</p>
         <p> The Current Player is: Player {this.props.current_ply}</p>
-        <p>Winner: {this.props.winner}</p>
+        <p>Winner: Player {this.props.winner}</p>
       </header>
       {cells}
     </div>

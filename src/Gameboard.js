@@ -9,12 +9,31 @@ class Gameboard extends Component  {
         this.props.drop(this.props.columns)
         //top to bottom
          for (let i = 1; i<= 2; i++) {
-            console.log(this.props.game_board, 'win board')
+            // console.log(this.props.game_board, 'win board')
             for ( let x = 0; x<= 3; x++) {
-                console.log(i, 'player')
-                for ( let y = 0; y<=5; y++) {
+                console.log(x, 'current player')
+                for ( let y = 0; y<=6; y++) {
                     if(this.props.game_board[y][x] === i) {
-                        if(this.props.game_board[y][x + 1] && this.props.game_board[y][x + 2] && this.props.game_board[y][x + 3]) {
+                        if(this.props.game_board[y][x + 1] === i && this.props.game_board[y][x + 2] === i && this.props.game_board[y][x + 3] === i) {
+                            let winner = i;
+                           
+                            console.log( 'winner is: ', winner)
+                            this.props.stopGame(winner)
+                            return 
+                        }
+                    }
+                }
+            }
+         }
+        
+         //horizontal
+         for (let i = 1; i<= 2; i++) {
+            console.log(this.props.game_board, 'win board')
+            for ( let x = 0; x<= 6; x++) {
+                console.log(i, 'player')
+                for ( let y = 0; y<=2; y++) {
+                    if(this.props.game_board[y][x] === i) {
+                        if(this.props.game_board[y + 1][x] === i && this.props.game_board[y + 2][x] === 1 && this.props.game_board[y + 3][x] === i) {
                             let winner = i
                             console.log( 'winner is: ', winner)
                             this.props.stopGame(winner)
@@ -24,11 +43,9 @@ class Gameboard extends Component  {
                 }
             }
          }
-      
     }
    
     handleClick = () => {
-         //telling me which col was click
          if(this.props.start_game) {
             this.checkBoard(this.props.game_board)
          } else {
@@ -47,9 +64,9 @@ class Gameboard extends Component  {
         let activeClass = 'board'
         if(board[col][rows] !== undefined) {
             if(board[col][rows] === 1) {
-                activeClass += ' player_2'
-            } else {
                 activeClass += ' player_1'
+            } else {
+                activeClass += ' player_2'
             }
         }
        
