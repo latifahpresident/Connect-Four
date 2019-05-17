@@ -1,4 +1,4 @@
-import { DROP_TOKEN, GAME_START} from './actions.js'
+import { DROP_TOKEN, GAME_START, WINNER_START, WINNER_FOUND} from './actions.js'
 const initialState = {
     active_game: false,
     current_player: 1,
@@ -34,9 +34,18 @@ export default (state = initialState, action) => {
                 gameBoard: gameBoard
             };
 
+        case WINNER_START: 
+            return {
+                ...state
+            }
+        case WINNER_FOUND:
+            return {
+                ...state,
+                winner: action.payload,
+                active_game: false
+            } 
         default: 
-            return state
-            
+            return state 
     }
 
 }
